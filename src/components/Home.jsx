@@ -1,26 +1,15 @@
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Fab from "@mui/material/Fab";
-import EventIcon from '@mui/icons-material/Event';
+import EventIcon from "@mui/icons-material/Event";
+import StatusDiv from "./status";
 
 const Home = () => {
   return (
     <>
       <div className=" relative flex flex-col h-full w-full">
         <div className="flex w-full h-[calc(35%)] justify-between">
-          <div className=" relative text-gray-600 rounded-3xl p-6 bg-white shadow-lg flex flex-col items-center md:items-start w-1/4 h-full hover:scale-105 ">
-            <p className="text-xl font-bold mt-5">No Bookings Made.</p>
-            <img
-              src="/wave.svg"
-              alt="waiting"
-              className=" absolute w-full h-auto bottom-0 left-0"
-            />
-            <img
-              src="/waiting.svg"
-              alt="waiting"
-              className="w-1/2 h-auto absolute bottom-0 right-1"
-            />
-          </div>
+          <StatusDiv />
           <div className="bg-gradient-to-br from-indigo-500 to-indigo-700 text-white rounded-3xl p-6 shadow-lg flex flex-col items-center md:items-start w-[calc(72%)] h-full  ">
             <h2 className="text-2xl font-bold mb-4 text-center md:text-left">
               Hi Sweta, Welcome back!
@@ -51,19 +40,17 @@ const Home = () => {
           </div>
         </div>
         <div className="absolute bottom-8 right-0">
-
-        <Fab
-  sx={{
-    backgroundColor: '#6366F1', // Tailwind indigo-500 hex code
-    '&:hover': {
-      backgroundColor: '#4F46E5', // Darker shade of indigo for hover effect (indigo-600)
-    },
-  }}
-  aria-label="add"
->
-  
-          <EventIcon sx={{ color: '#FFFFFF' }}/>
-        </Fab>
+          <Fab
+            sx={{
+              backgroundColor: "#6366F1", // Tailwind indigo-500 hex code
+              "&:hover": {
+                backgroundColor: "#4F46E5", // Darker shade of indigo for hover effect (indigo-600)
+              },
+            }}
+            aria-label="add"
+          >
+            <EventIcon sx={{ color: "#FFFFFF" }} />
+          </Fab>
         </div>
       </div>
     </>
