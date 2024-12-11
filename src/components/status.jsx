@@ -9,7 +9,7 @@ const StatusDiv = () => {
         <img
           src="/wave.svg"
           alt="waiting"
-          className="absolute w-full h-auto bottom-0 left-0"
+          className="absolute w-full h-auto bottom-0 left-0 "
         />
         <img
           src="/waiting.svg"
