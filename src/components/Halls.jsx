@@ -1,20 +1,33 @@
 import React from "react";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const halls = [
   {
-    name: "Conference Hall",
-    capacity: "100 People",
-    image: "https://via.placeholder.com/400x600", // Replace with your hall images
-  },
-  {
-    name: "Banquet Hall",
-    capacity: "200 People",
-    image: "https://via.placeholder.com/400x600", // Replace with your hall images
-  },
-  {
-    name: "Auditorium",
+    name: "Hall 1",
     capacity: "500 People",
-    image: "https://via.placeholder.com/400x600", // Replace with your hall images
+    location: "Main Campus, Building A",
+    availability: "Available 7 days a week",
+    price: "$200/hr",
+    description: "Our flagship venue perfect for conferences, performances, and large ceremonies.",
+    image: "https://via.placeholder.com/400x300", // Replace with your hall images
+  },
+  {
+    name: "Hall 2",
+    capacity: "300 People",
+    location: "South Wing, Building B",
+    availability: "Available weekdays",
+    price: "$150/hr",
+    description: "Ideal for weddings, parties, and other celebratory events.",
+    image: "https://via.placeholder.com/400x300", // Replace with your hall images
+  },
+  {
+    name: "Hall 3",
+    capacity: "50 People",
+    location: "East Wing, Building C",
+    availability: "Available on-demand",
+    price: "$100/hr",
+    description: "Perfect for corporate meetings and small workshops.",
+    image: "https://via.placeholder.com/400x300", // Replace with your hall images
   },
 ];
 
@@ -26,15 +39,36 @@ const Halls = () => {
         {halls.map((hall, index) => (
           <div
             key={index}
-            className="relative bg-cover bg-center h-96 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105"
-            style={{ backgroundImage: `url(${hall.image})` }}
+            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105"
           >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white">
-              <h2 className="text-xl font-bold mb-2">{hall.name}</h2>
-              <p className="mb-4 text-sm">Capacity: {hall.capacity}</p>
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-sm font-medium">
-                Book Hall
+            {/* Hall Image */}
+            <div className="relative h-64">
+              <img
+                src={hall.image}
+                alt={hall.name}
+                className="w-full h-full object-cover"
+              />
+             
+            </div>
+
+            {/* Hall Details */}
+            <div className="p-4 h-32 flex flex-col justify-between">
+              <h2 className="text-lg font-bold">{hall.name}</h2>
+              <p className="text-xs text-gray-600">{hall.description}</p>
+
+              <div className="text-xs text-gray-500 flex items-center mt-2">
+                <span className="mr-2">👤</span> Capacity: {hall.capacity}
+              </div>
+              <div className="text-xs text-gray-500 flex items-center mt-1">
+                <span className="mr-2">📍</span> {hall.location}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="p-4">
+              <button className="w-full px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600">
+                View Details 
+                <ChevronRightIcon/>
               </button>
             </div>
           </div>
