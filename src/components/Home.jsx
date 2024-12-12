@@ -5,6 +5,43 @@ import EventIcon from "@mui/icons-material/Event";
 import StatusDiv from "./status";
 import { Link } from "react-router-dom";
 
+
+const halls = [
+  {
+    id:"hall1",
+    name: "Hall 1",
+    capacity: "120 People",
+    location: "Block A",
+    availability: "Available 7 days a week",
+    price: "$200/hr",
+    description:
+      "Our flagship venue perfect for conferences, performances, and large ceremonies.",
+    image: "/Hall 1.png", // Replace with your hall images
+  },
+  {
+    id:"hall2",
+    name: "Hall 2",
+    capacity: "80 People",
+    location: "Block A",
+    availability: "Available weekdays",
+    price: "$150/hr",
+    description: "Ideal for meetings that require asthetic feel.",
+    image: "/Hall 2.jpg", // Replace with your hall images
+  },
+  {
+    id:"hall3",
+    name: "Hall 3",
+    capacity: "60 People",
+    location: "Block F & G",
+    availability: "Available on-demand",
+    price: "$100/hr",
+    description: "Perfect for corporate meetings and small workshops.",
+    image: "/Hall 3.png", // Replace with your hall images
+  },
+  
+];
+
+
 const Home = () => {
   return (
     <>
@@ -46,6 +83,47 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div className="flex w-full h-[calc(65%)] justify-between items-center">
+          
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        {halls.map((hall, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform h-[calc(100%)] "
+          >
+            {/* Hall Image */}
+            <div className="relative h-40">
+              <img
+                src={hall.image}
+                alt={hall.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Hall Details */}
+            <div className="p-4 h-24 flex flex-col justify-between">
+              <h2 className="text-sm font-bold">{hall.name}</h2>
+              <p className="text-xs text-gray-600">{hall.description}</p>
+
+              <div className="text-xs text-gray-500 flex items-center mt-2">
+                <span className="mr-2">👤</span> Capacity: {hall.capacity}
+              </div>
+              <div className="text-xs text-gray-500 flex items-center mt-1">
+                <span className="mr-2">📍</span> {hall.location}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="p-4 mt-2">
+              <button className="w-full inline-block px-4 py-2 bg-indigo-500 text-white text-center rounded-lg hover:bg-indigo-600">
+                View Details
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+          
+          </div>
         <Link to="/dashboard/form">
         <div className="absolute bottom-8 right-0">
           <Fab

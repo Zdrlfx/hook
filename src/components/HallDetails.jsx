@@ -2,18 +2,34 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const HallDetails = ({ hall }) => {
-  // Mock data for now; replace with your dynamic data.
-  const hallData = hall || {
-    name: "Hall 1",
-    capacity: "120 People",
-    location: "Block A",
-    availability: "Available 7 days a week",
-    price: "$200/hr",
-    description:
-      "Our flagship venue perfect for conferences, performances, and large ceremonies.",
-    image: "/Hall 1.png", // Replace with your hall images
-    seatingImage: "/hall1graphics.png", // Path to the seating chart
+  // Simulated hall data
+  const hallsData = {
+    "Hall 1": {
+      name: "Hall 1",
+      capacity: "120 People",
+      location: "Block A",
+      availability: "Available 7 days a week",
+      price: "$200/hr",
+      description:
+        "Our flagship venue perfect for conferences, performances, and large ceremonies.",
+      image: "/Hall 1.png",
+      seatingImage: "/hall1graphics.png",
+    },
+    "Hall 2": {
+      name: "Hall 2",
+      capacity: "80 People",
+      location: "Block B",
+      availability: "Available weekdays only",
+      price: "$150/hr",
+      description: "Ideal for small meetings and workshops.",
+      image: "/Hall 2.png",
+      seatingImage: "/hall2graphics.png",
+    },
+    // Add more halls as needed
   };
+
+  // Fetch hall data based on the `hall` prop
+  const hallData = hallsData[hall] || hallsData["Hall 1"]; // Default to Hall 1 if `hall` is undefined
 
   const [showSeating, setShowSeating] = useState(false);
 
@@ -37,6 +53,13 @@ const HallDetails = ({ hall }) => {
           </p>
           <p className="text-gray-600 text-sm mt-1">
             <span className="font-semibold">Location:</span> {hallData.location}
+          </p>
+          <p className="text-gray-600 text-sm mt-1">
+            <span className="font-semibold">Availability:</span>{" "}
+            {hallData.availability}
+          </p>
+          <p className="text-gray-600 text-sm mt-1">
+            <span className="font-semibold">Price:</span> {hallData.price}
           </p>
 
           {/* Buttons beside the image */}

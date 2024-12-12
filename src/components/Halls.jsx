@@ -4,7 +4,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const halls = [
   {
-    id:"hall1",
+    id: "hall1",
     name: "Hall 1",
     capacity: "120 People",
     location: "Block A",
@@ -15,7 +15,7 @@ const halls = [
     image: "/Hall 1.png", // Replace with your hall images
   },
   {
-    id:"hall2",
+    id: "hall2",
     name: "Hall 2",
     capacity: "80 People",
     location: "Block A",
@@ -25,7 +25,7 @@ const halls = [
     image: "/Hall 2.jpg", // Replace with your hall images
   },
   {
-    id:"hall3",
+    id: "hall3",
     name: "Hall 3",
     capacity: "60 People",
     location: "Block F & G",
@@ -34,7 +34,6 @@ const halls = [
     description: "Perfect for corporate meetings and small workshops.",
     image: "/Hall 3.png", // Replace with your hall images
   },
-  
 ];
 
 const Halls = () => {
@@ -70,16 +69,15 @@ const Halls = () => {
             </div>
 
             {/* Call to Action */}
-           
-<div className="p-4">
-  <Link
-    to={`/dashboard/halls/${hall.id}`}
-    className="w-full inline-block px-4 py-2 bg-indigo-500 text-white text-center rounded-lg hover:bg-indigo-600"
-  >
-    View Details
-  </Link>
-</div>
 
+            <div className="p-4">
+              <Link
+                to={`/dashboard/halls/${hall.id}`}
+                className="w-full inline-block px-4 py-2 bg-indigo-500 text-white text-center rounded-lg hover:bg-indigo-600"
+              >
+                View Details
+              </Link>
+            </div>
           </div>
         ))}
       </div>
