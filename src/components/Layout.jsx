@@ -8,6 +8,7 @@ import Events from "./Events";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Calender from "./Calender";
+import HallDetails from "./HallDetails";
 
 const Layout = () => {
   return (
@@ -21,6 +22,7 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
               <Route path="home" element={<Home />} />
               <Route path="halls" element={<Halls />} />
+              <Route path="halls/:hallId" element={<HallDetails />} />
               <Route path="booking" element={<Booking />} />
               <Route path="form" element={<GeneralBookingForm />} />
               <Route path="events" element={<Events />} />

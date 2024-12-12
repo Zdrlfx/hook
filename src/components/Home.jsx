@@ -11,7 +11,7 @@ const Home = () => {
       <div className=" relative flex flex-col h-full w-full">
         <div className="flex w-full h-[calc(35%)] justify-between">
           <div className="relative text-gray-600 rounded-3xl p-6 bg-white shadow-lg flex flex-col items-center md:items-start w-1/4 h-full hover:scale-105 transition-transform">
-          <Link to="/booking">
+          <Link to="/dashboard/booking">
             <StatusDiv />
           </Link>
           </div>

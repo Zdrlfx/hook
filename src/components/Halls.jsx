@@ -1,17 +1,21 @@
 import React from "react";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Link } from "react-router-dom";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const halls = [
   {
+    id:"hall1",
     name: "Hall 1",
     capacity: "500 People",
     location: "Main Campus, Building A",
     availability: "Available 7 days a week",
     price: "$200/hr",
-    description: "Our flagship venue perfect for conferences, performances, and large ceremonies.",
+    description:
+      "Our flagship venue perfect for conferences, performances, and large ceremonies.",
     image: "https://via.placeholder.com/400x300", // Replace with your hall images
   },
   {
+    id:"hall2",
     name: "Hall 2",
     capacity: "300 People",
     location: "South Wing, Building B",
@@ -21,6 +25,7 @@ const halls = [
     image: "https://via.placeholder.com/400x300", // Replace with your hall images
   },
   {
+    id:"hall3",
     name: "Hall 3",
     capacity: "50 People",
     location: "East Wing, Building C",
@@ -48,7 +53,6 @@ const Halls = () => {
                 alt={hall.name}
                 className="w-full h-full object-cover"
               />
-             
             </div>
 
             {/* Hall Details */}
@@ -65,12 +69,16 @@ const Halls = () => {
             </div>
 
             {/* Call to Action */}
-            <div className="p-4">
-              <button className="w-full px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600">
-                View Details 
-                <ChevronRightIcon/>
-              </button>
-            </div>
+           
+<div className="p-4">
+  <Link
+    to={`/dashboard/halls/${hall.id}`}
+    className="w-full inline-block px-4 py-2 bg-indigo-500 text-white text-center rounded-lg hover:bg-indigo-600"
+  >
+    View Details
+  </Link>
+</div>
+
           </div>
         ))}
       </div>
