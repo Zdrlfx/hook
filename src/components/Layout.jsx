@@ -28,7 +28,7 @@ const Layout = () => {
               <Route path="events" element={<Events />} />
             </Routes>
           </div>
-          <div className="w-1/4">
+          <div className="w-1/4 hidden lg:block">
             <Calender />
           </div>
         </div>

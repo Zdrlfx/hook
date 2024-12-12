@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false); // Hidden by default on small screens
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   // Toggle function for mobile sidebar
   const toggleMobileSidebar = () =>
@@ -43,98 +43,103 @@ const Sidebar = () => {
 
         {/* Sidebar Content */}
         <div>
-        <div
-          className={`${
-            isMobileSidebarOpen ? "block" : "hidden"
-          } lg:block pl-10 pr-4`}
-        >
-          {/* Overview Section */}
-          <h3 className="text-sm font-semibold text-gray-500 mt-4 mb-2">
-            Overview
-          </h3>
-          <ul className="space-y-4">
-            <li>
-              <NavLink
-                to="/dashboard/home"
-                className={({ isActive }) =>
-                  `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
-                    isActive
-                      ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
-                      : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
-                  }`
-                }
-              >
-                <span>📊</span> <span>Dashboard</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/halls"
-                className={({ isActive }) =>
-                  `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
-                    isActive
-                      ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
-                      : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
-                  }`
-                }
-              >
-                <span>📩</span> <span>Halls</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/booking"
-                className={({ isActive }) =>
-                  `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
-                    isActive
-                      ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
-                      : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
-                  }`
-                }
-              >
-                <span>📚</span> <span>My Bookings</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/form"
-                className={({ isActive }) =>
-                  `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
-                    isActive
-                      ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
-                      : "text-gray-800 hover:bg-gray-100  hover:border-indigo-500"
-                  }`
-                }
-              >
-                <span>✅</span> <span>College Map</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/dashboard/events"
-                className={({ isActive }) =>
-                  `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
-                    isActive
-                      ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
-                      : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
-                  }`
-                }
-              >
-                <span>👥</span> <span>Events</span>
-              </NavLink>
-            </li>
-          </ul>
+          <div
+            className={`${
+              isMobileSidebarOpen ? "block" : "hidden"
+            } lg:block pl-10 pr-4`}
+          >
+            {/* Overview Section */}
+            <h3 className="text-sm font-semibold text-gray-500 mt-4 mb-2">
+              Overview
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <NavLink
+                  to="/dashboard/home"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
+                      isActive
+                        ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
+                    }`
+                  }
+                >
+                  <span>📊</span> <span>Dashboard</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/halls"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
+                      isActive
+                        ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
+                    }`
+                  }
+                >
+                  <span>📩</span> <span>Halls</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/booking"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
+                      isActive
+                        ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
+                    }`
+                  }
+                >
+                  <span>📚</span> <span>My Bookings</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/form"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
+                      isActive
+                        ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100  hover:border-indigo-500"
+                    }`
+                  }
+                >
+                  <span>✅</span> <span>College Map</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/events"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
+                      isActive
+                        ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
+                    }`
+                  }
+                >
+                  <span>👥</span> <span>Events</span>
+                </NavLink>
+              </li>
+            </ul>
           </div>
-          <div className="pl-10 pr-4 pt-36">
+
           {/* Settings Section */}
-          <h3 className="text-sm font-semibold text-gray-500 mt-6 mb-2">
-            Settings
-          </h3>
-          <ul className="space-y-4">
-            <li className="text-red-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
-              Logout
-            </li>
-          </ul>
+          <div
+            className={`pl-10 pr-4 pt-36 ${
+              isMobileSidebarOpen ? "block" : "hidden"
+            } lg:block`}
+          >
+            <h3 className="text-sm font-semibold text-gray-500 mt-6 mb-2">
+              Settings
+            </h3>
+            <ul className="space-y-4">
+              <li className="text-red-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
+                Logout
+              </li>
+            </ul>
           </div>
         </div>
       </aside>

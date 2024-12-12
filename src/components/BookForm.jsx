@@ -15,8 +15,8 @@ const GeneralBookingForm = () => {
 
   const halls = ["Conference Hall", "Banquet Hall", "Auditorium"];
   const user = {
-    name: "John Doe", // Example user
-    avatar: "/avatar.png", // Replace with your avatar path
+    name: "John Doe",
+    avatar: "/avatar.png",
   };
 
   const handleInputChange = (e) => {
@@ -31,9 +31,10 @@ const GeneralBookingForm = () => {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="w-full h-full bg-white overflow-y-auto">
-        <div className="flex items-center">
+    <div className="h-screen flex justify-center items-center bg-gray-50 px-4">
+      <div className="w-full max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg overflow-y-auto">
+        {/* User Info */}
+        <div className="flex items-center mb-6">
           <Avatar src={user.avatar} alt={user.name} className="mr-4" />
           <div>
             <p className="text-gray-500 text-sm">Booking as:</p>
@@ -41,40 +42,43 @@ const GeneralBookingForm = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4 w-full">
-          {/* Contact Info */}
-          <div>
-            <label htmlFor="email" className="block text-gray-700 font-medium">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-gray-700 font-medium">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              placeholder="Enter your phone number"
-              required
-            />
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Email and Phone */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="email" className="block text-gray-700 font-medium">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-gray-700 font-medium">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
           </div>
 
-          {/* Event Details */}
+          {/* Event Name */}
           <div>
             <label htmlFor="eventName" className="block text-gray-700 font-medium">
               Event Name
@@ -91,6 +95,7 @@ const GeneralBookingForm = () => {
             />
           </div>
 
+          {/* Event Date and Time */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="eventDate" className="block text-gray-700 font-medium">
@@ -122,6 +127,7 @@ const GeneralBookingForm = () => {
             </div>
           </div>
 
+          {/* Attendees */}
           <div>
             <label htmlFor="attendees" className="block text-gray-700 font-medium">
               Expected Number of Attendees
