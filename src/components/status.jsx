@@ -5,7 +5,7 @@ const StatusDiv = () => {
   return (
    
       <>
-        <p className="text-xl font-bold mt-5">No Bookings Made.</p>
+        <p className="text-xl font-bold mt-5">View Bookings.</p>
         <img
           src="/wave.svg"
           alt="waiting"

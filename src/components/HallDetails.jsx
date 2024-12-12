@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HallDetails = ({ hall }) => {
   // Mock data for now; replace with your dynamic data.
   const hallData = hall || {
     name: "Hall 1",
-    capacity: "500 People",
-    location: "Main Campus, Building A",
+    capacity: "120 People",
+    location: "Block A",
     availability: "Available 7 days a week",
     price: "$200/hr",
     description:
       "Our flagship venue perfect for conferences, performances, and large ceremonies.",
-    image: "https://via.placeholder.com/400x300", // Replace with your hall images
+    image: "/Hall 1.png", // Replace with your hall images
+    seatingImage: "/hall1graphics.png", // Path to the seating chart
   };
+
+  const [showSeating, setShowSeating] = useState(false);
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white rounded-lg shadow-md">
@@ -40,7 +44,10 @@ const HallDetails = ({ hall }) => {
             <button className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-500">
               View in Map
             </button>
-            <button className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-500">
+            <button
+              className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-500"
+              onClick={() => setShowSeating(true)}
+            >
               View Seating
             </button>
           </div>
@@ -55,10 +62,34 @@ const HallDetails = ({ hall }) => {
 
       {/* Book Now Button */}
       <div className="mt-10">
-        <button className="w-full px-4 py-3 border border-indigo-500 text-indigo-500 text-lg font-semibold rounded-md hover:bg-indigo-100">
-          Book Now
-        </button>
+        <Link to="/dashboard/form">
+          <button className="w-full px-4 py-3 border border-indigo-500 text-indigo-500 text-lg font-semibold rounded-md hover:bg-indigo-100">
+            Book Now
+          </button>
+        </Link>
       </div>
+
+      {/* Seating Modal */}
+      {showSeating && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Seating Arrangement
+            </h3>
+            <img
+              src={hallData.seatingImage}
+              alt={`${hallData.name} Seating`}
+              className="w-full h-auto rounded-lg"
+            />
+            <button
+              className="mt-4 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-500"
+              onClick={() => setShowSeating(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Calender from "./Calender";
 import HallDetails from "./HallDetails";
+import CollegeMap from "./CollegeMap";
 
 const Layout = () => {
   const [formData, setFormData] = useState(null); // Shared state for booking data
@@ -34,6 +35,7 @@ const Layout = () => {
                 element={<GeneralBookingForm setFormData={setFormData} />} // Pass setFormData to update state
               />
               <Route path="events" element={<Events />} />
+              <Route path="college-map" element={<CollegeMap />} /> {/* New Route */}
             </Routes>
           </div>
           <div className="w-1/4 hidden lg:block">

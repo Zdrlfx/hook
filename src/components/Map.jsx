@@ -4,7 +4,7 @@ import { Avatar } from "@mui/material";
 const GeneralBookingForm = ({ setFormData }) => {
   const halls = ["Hall 1", "Hall 2", "Hall 3", "Hall 4"];
   const user = {
-    name: "John Doe",
+    name: "Sweta Suwal",
     avatar: "/avatar.png",
   };
 
