@@ -55,7 +55,7 @@ const Sidebar = () => {
           <ul className="space-y-4">
             <li>
               <NavLink
-                to="/"
+                to="/dashboard"
                 className={({ isActive }) =>
                   `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
                     isActive
@@ -69,7 +69,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/halls"
+                to="/dashboard/halls"
                 className={({ isActive }) =>
                   `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
                     isActive
@@ -83,7 +83,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/booking"
+                to="/dashboard/booking"
                 className={({ isActive }) =>
                   `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
                     isActive
@@ -97,7 +97,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/map"
+                to="/dashboard/form"
                 className={({ isActive }) =>
                   `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
                     isActive
@@ -111,7 +111,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to="/events"
+                to="/dashboard/events"
                 className={({ isActive }) =>
                   `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
                     isActive
