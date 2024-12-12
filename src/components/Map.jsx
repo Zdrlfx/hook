@@ -6,16 +6,17 @@ const GeneralBookingForm = () => {
     phone: "",
     eventName: "",
     eventDate: "",
-    eventTime: "",
+    startTime: "",
+    endTime: "",
     attendees: "",
     hall: "",
     additionalInfo: "",
   });
 
-  const halls = ["Conference Hall", "Banquet Hall", "Auditorium"];
+  const halls = ["Hall 1", "Hall 2", "Hall 3", "Hall 4"];
   const user = {
-    name: "John Doe", // Example user
-    avatar: "/avatar.png", // Replace with your avatar path
+    name: "John Doe",
+    avatar: "/avatar.png",
   };
 
   const handleInputChange = (e) => {
@@ -30,11 +31,9 @@ const GeneralBookingForm = () => {
   };
 
   return (
-    <div className="container mx-auto px-8 flex justify-center ">
+    <div className="container mx-auto px-8 flex justify-center">
       <div className="w-full bg-white p-6 rounded-3xl shadow-md overflow-y-hidden">
         <h1 className="text-3xl font-bold text-center mb-3">Book a Hall</h1>
-
-        {/* Booking as Section */}
         <div className="flex items-center mb-6">
           <Avatar src={user.avatar} alt={user.name} className="mr-4" />
           <div>
@@ -42,9 +41,7 @@ const GeneralBookingForm = () => {
             <p className="font-medium text-lg">{user.name}</p>
           </div>
         </div>
-
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Event Name and Phone Number */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="eventName" className="block text-gray-700 font-medium">
@@ -56,7 +53,7 @@ const GeneralBookingForm = () => {
                 name="eventName"
                 value={formData.eventName}
                 onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full mt-1 p-2 border rounded-md"
                 placeholder="Enter event name"
                 required
               />
@@ -71,14 +68,12 @@ const GeneralBookingForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full mt-1 p-2 border rounded-md"
                 placeholder="Enter your phone number"
                 required
               />
             </div>
           </div>
-
-          {/* Event Date and Time */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="eventDate" className="block text-gray-700 font-medium">
@@ -90,27 +85,39 @@ const GeneralBookingForm = () => {
                 name="eventDate"
                 value={formData.eventDate}
                 onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full mt-1 p-2 border rounded-md"
                 required
               />
             </div>
             <div>
-              <label htmlFor="eventTime" className="block text-gray-700 font-medium">
-                Event Time
+              <label htmlFor="startTime" className="block text-gray-700 font-medium">
+                Start Time
               </label>
               <input
                 type="time"
-                id="eventTime"
-                name="eventTime"
-                value={formData.eventTime}
+                id="startTime"
+                name="startTime"
+                value={formData.startTime}
                 onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full mt-1 p-2 border rounded-md"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="endTime" className="block text-gray-700 font-medium">
+                End Time
+              </label>
+              <input
+                type="time"
+                id="endTime"
+                name="endTime"
+                value={formData.endTime}
+                onChange={handleInputChange}
+                className="w-full mt-1 p-2 border rounded-md"
                 required
               />
             </div>
           </div>
-
-          {/* Expected Number of Attendees and Hall Selection */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="attendees" className="block text-gray-700 font-medium">
@@ -122,7 +129,7 @@ const GeneralBookingForm = () => {
                 name="attendees"
                 value={formData.attendees}
                 onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full mt-1 p-2 border rounded-md"
                 placeholder="Enter number of attendees"
                 required
               />
@@ -136,7 +143,7 @@ const GeneralBookingForm = () => {
                 name="hall"
                 value={formData.hall}
                 onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                className="w-full mt-1 p-2 border rounded-md"
                 required
               >
                 <option value="" disabled>
@@ -150,8 +157,6 @@ const GeneralBookingForm = () => {
               </select>
             </div>
           </div>
-
-          {/* Additional Info */}
           <div>
             <label htmlFor="additionalInfo" className="block text-gray-700 font-medium">
               Event Details
@@ -161,13 +166,11 @@ const GeneralBookingForm = () => {
               name="additionalInfo"
               value={formData.additionalInfo}
               onChange={handleInputChange}
-              className="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              placeholder="Describe your event, including any technical requirements or special requests."
+              className="w-full mt-1 p-2 border rounded-md"
+              placeholder="Describe your event."
               rows="4"
             />
           </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-indigo-500 text-white font-medium py-2 rounded-md hover:bg-[#fa4b6e]"
