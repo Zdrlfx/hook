@@ -6,33 +6,43 @@ const halls = [
   {
     id:"hall1",
     name: "Hall 1",
-    capacity: "500 People",
-    location: "Main Campus, Building A",
+    capacity: "120 People",
+    location: "Block A",
     availability: "Available 7 days a week",
     price: "$200/hr",
     description:
       "Our flagship venue perfect for conferences, performances, and large ceremonies.",
-    image: "https://via.placeholder.com/400x300", // Replace with your hall images
+    image: "/Hall 1.png", // Replace with your hall images
   },
   {
     id:"hall2",
     name: "Hall 2",
-    capacity: "300 People",
-    location: "South Wing, Building B",
+    capacity: "80 People",
+    location: "Block A",
     availability: "Available weekdays",
     price: "$150/hr",
-    description: "Ideal for weddings, parties, and other celebratory events.",
-    image: "https://via.placeholder.com/400x300", // Replace with your hall images
+    description: "Ideal for meetings that require asthetic feel.",
+    image: "/Hall 2.jpg", // Replace with your hall images
   },
   {
     id:"hall3",
     name: "Hall 3",
-    capacity: "50 People",
-    location: "East Wing, Building C",
+    capacity: "60 People",
+    location: "Block F & G",
     availability: "Available on-demand",
     price: "$100/hr",
     description: "Perfect for corporate meetings and small workshops.",
-    image: "https://via.placeholder.com/400x300", // Replace with your hall images
+    image: "/Hall 3.png", // Replace with your hall images
+  },
+  {
+    id:"hall4",
+    name: "Hall 4",
+    capacity: "30 People",
+    location: "Block F & G",
+    availability: "Available on-demand",
+    price: "$100/hr",
+    description: "Perfect for meetings and small workshops.",
+    image: "/Hall 4.jpg", // Replace with your hall images
   },
 ];
 
