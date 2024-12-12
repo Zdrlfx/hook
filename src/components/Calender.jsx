@@ -4,22 +4,21 @@ import { StaticDatePicker } from "@mui/x-date-pickers";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { events } from "./Events"; // Import events data
 
 const RightSidebar = () => {
   const navigate = useNavigate();
-
-  // Example events data
-  const events = [
-    { date: "2024-12-15", title: "Christmas Party", id: 1 },
-    { date: "2024-12-20", title: "Annual Meetup", id: 2 },
-  ];
-
   const [selectedDate, setSelectedDate] = useState(dayjs());
+
+  // Filter events for the selected date
+  const eventsForDate = events.filter((event) =>
+    dayjs(event.date).isSame(selectedDate, "day")
+  );
 
   // Function to check if a day has events
   const getDayContent = (date) => {
-    const hasEvent = events.some(
-      (event) => dayjs(event.date).isSame(date, "day")
+    const hasEvent = events.some((event) =>
+      dayjs(event.date).isSame(date, "day")
     );
 
     return hasEvent ? (
@@ -35,20 +34,13 @@ const RightSidebar = () => {
   // Handle date click
   const handleDateChange = (newValue) => {
     setSelectedDate(newValue);
-
-    const event = events.find((e) =>
-      dayjs(e.date).isSame(newValue, "day")
-    );
-    if (event) {
-      navigate(`/events/${event.id}`); // Redirect to event details
-    }
   };
 
   return (
-    <div className=" flex flex-col w-full h-full px-4 py-6">
+    <div className="flex flex-col w-full h-full px-4 py-6">
       {/* Calendar Section */}
       <h1 className="text-lg font-semibold mb-4">Calendar</h1>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mb-4">
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <StaticDatePicker
             displayStaticWrapperAs="desktop"
@@ -79,6 +71,31 @@ const RightSidebar = () => {
           />
         </LocalizationProvider>
       </div>
+
+  {/* Event List Section */}
+<h2 className="text-md font-semibold mb-2">
+  Events on {selectedDate.format("YYYY-MM-DD")}
+</h2>
+<div className="space-y-2">
+  {eventsForDate.length > 0 ? (
+    eventsForDate.map((event) => (
+      <div
+        key={event.id}
+        className="flex items-center p-4 bg-white shadow-md rounded-lg border border-gray-200 "
+      >
+        {/* Event Information */}
+        <div className="ml-4">
+          <h3 className="text-sm font-bold">{event.title}</h3>
+          <p className="text-xs text-gray-500">⏰<span>{event.time}</span></p>
+          <p className="text-xs text-gray-500">📍<span>{event.hall}</span></p>
+        </div>
+        
+      </div>
+    ))
+  ) : (
+    <p className="text-sm text-gray-500">No events for this date.</p>
+  )}
+</div>
     </div>
   );
 };
