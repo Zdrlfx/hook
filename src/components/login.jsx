@@ -13,7 +13,7 @@ export default function Login({ setUser }) {
   // Mock users for validation
   const mockUsers = [
     {
-      firstName: "Sweta",
+      firstName: "Unique",
       lastName: "Suwal",
       email: "swetasuwal.khce@gmail.com",
       password: "123",

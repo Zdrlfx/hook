@@ -24,7 +24,7 @@ const Home = () => {
               booking in just a few clicks!
             </p>
             <div className="flex items-center justify-center">
-              <Link to="/map">
+              <Link to="/dashboard/form">
                 <button className="flex items-center bg-black text-white font-medium px-4 py-2 rounded-full shadow-lg hover:bg-gray-800 transition duration-300 text-xs">
                   Book Now
                   <span className="ml-2 flex items-center justify-center w-5 h-5 bg-white text-black rounded-full">
@@ -46,7 +46,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Link to="/map">
+        <Link to="/dashboard/form">
         <div className="absolute bottom-8 right-0">
           <Fab
             sx={{

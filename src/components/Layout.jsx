@@ -18,7 +18,8 @@ const Layout = () => {
         <div className="flex-1 flex flex-row justify-between align-center">
           <div className="w-3/4 flex flex-col items-center md:items-start px-6">
             <Routes>
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
+              <Route path="home" element={<Home />} />
               <Route path="halls" element={<Halls />} />
               <Route path="booking" element={<Booking />} />
               <Route path="form" element={<GeneralBookingForm />} />
