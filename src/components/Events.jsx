@@ -1,6 +1,6 @@
 import React from "react";
 
-const events = [
+export const events = [
   {
     id: 1,
     title: "Psychological First Aid",
