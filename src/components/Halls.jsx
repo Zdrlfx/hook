@@ -34,16 +34,7 @@ const halls = [
     description: "Perfect for corporate meetings and small workshops.",
     image: "/Hall 3.png", // Replace with your hall images
   },
-  {
-    id:"hall4",
-    name: "Hall 4",
-    capacity: "30 People",
-    location: "Block F & G",
-    availability: "Available on-demand",
-    price: "$100/hr",
-    description: "Perfect for meetings and small workshops.",
-    image: "/Hall 4.jpg", // Replace with your hall images
-  },
+  
 ];
 
 const Halls = () => {
