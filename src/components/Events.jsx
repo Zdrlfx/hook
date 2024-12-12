@@ -8,7 +8,6 @@ const events = [
     hall: "Main Hall",
     date: "2024-08-10",
     time: "03:00 PM",
-    image: "https://via.placeholder.com/150",
   },
   {
     id: 2,
@@ -17,7 +16,6 @@ const events = [
     hall: "South Wing",
     date: "2024-06-08",
     time: "11:00 AM",
-    image: "https://via.placeholder.com/150",
   },
 ];
 

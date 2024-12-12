@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Avatar } from "@mui/material";
 
-const GeneralBookingForm = () => {
-  const [formData, setFormData] = useState({
+const GeneralBookingForm = ({ setFormData }) => {
+  const halls = ["Hall 1", "Hall 2", "Hall 3", "Hall 4"];
+  const user = {
+    name: "John Doe",
+    avatar: "/avatar.png",
+  };
+
+  // Local form state for controlled inputs
+  const [localFormData, setLocalFormData] = React.useState({
     phone: "",
     eventName: "",
     eventDate: "",
@@ -13,20 +20,15 @@ const GeneralBookingForm = () => {
     additionalInfo: "",
   });
 
-  const halls = ["Hall 1", "Hall 2", "Hall 3", "Hall 4"];
-  const user = {
-    name: "John Doe",
-    avatar: "/avatar.png",
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const updatedFormData = { ...localFormData, [name]: value };
+    setLocalFormData(updatedFormData);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Booking Form Data:", formData);
+    setFormData(localFormData); // Update the shared state via parent
     alert("Booking request submitted!");
   };
 
@@ -51,7 +53,7 @@ const GeneralBookingForm = () => {
                 type="text"
                 id="eventName"
                 name="eventName"
-                value={formData.eventName}
+                value={localFormData.eventName}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 placeholder="Enter event name"
@@ -66,7 +68,7 @@ const GeneralBookingForm = () => {
                 type="tel"
                 id="phone"
                 name="phone"
-                value={formData.phone}
+                value={localFormData.phone}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 placeholder="Enter your phone number"
@@ -83,7 +85,7 @@ const GeneralBookingForm = () => {
                 type="date"
                 id="eventDate"
                 name="eventDate"
-                value={formData.eventDate}
+                value={localFormData.eventDate}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 required
@@ -97,7 +99,7 @@ const GeneralBookingForm = () => {
                 type="time"
                 id="startTime"
                 name="startTime"
-                value={formData.startTime}
+                value={localFormData.startTime}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 required
@@ -111,7 +113,7 @@ const GeneralBookingForm = () => {
                 type="time"
                 id="endTime"
                 name="endTime"
-                value={formData.endTime}
+                value={localFormData.endTime}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 required
@@ -127,7 +129,7 @@ const GeneralBookingForm = () => {
                 type="number"
                 id="attendees"
                 name="attendees"
-                value={formData.attendees}
+                value={localFormData.attendees}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 placeholder="Enter number of attendees"
@@ -141,7 +143,7 @@ const GeneralBookingForm = () => {
               <select
                 id="hall"
                 name="hall"
-                value={formData.hall}
+                value={localFormData.hall}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md"
                 required
@@ -164,7 +166,7 @@ const GeneralBookingForm = () => {
             <textarea
               id="additionalInfo"
               name="additionalInfo"
-              value={formData.additionalInfo}
+              value={localFormData.additionalInfo}
               onChange={handleInputChange}
               className="w-full mt-1 p-2 border rounded-md"
               placeholder="Describe your event."
