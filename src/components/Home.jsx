@@ -52,17 +52,17 @@ const Home = () => {
             <StatusDiv />
           </Link>
           </div>
-          <div className="bg-gradient-to-br from-indigo-500 to-indigo-700 text-white rounded-3xl p-6 shadow-lg flex flex-col items-center md:items-start w-[calc(72%)] h-full  ">
-            <h2 className="text-2xl font-bold mb-4 text-center md:text-left">
+          <div className="bg-gradient-to-br from-indigo-500 to-indigo-700 text-white rounded-3xl p-9 shadow-lg flex flex-col items-center md:items-start w-[calc(72%)] h-full  ">
+            <h2 className="text-sm  mb-4 text-center md:text-left">
               Hi Sweta, Welcome back!
             </h2>
-            <p className="text-sm mb-4 text-center md:text-left">
+            <p className="text-2xl font-bold mb-4 text-center md:text-left">
               Browse through the available halls for your events and secure your
               booking in just a few clicks!
             </p>
             <div className="flex items-center justify-center">
               <Link to="/dashboard/form">
-                <button className="flex items-center bg-black text-white font-medium px-4 py-2 rounded-full shadow-lg hover:bg-gray-800 transition duration-300 text-xs">
+                <button className="flex items-center bg-black text-white font-medium px-4 py-2 rounded-full shadow-lg hover:bg-gray-800 transition duration-300 text-xs mt-3">
                   Book Now
                   <span className="ml-2 flex items-center justify-center w-5 h-5 bg-white text-black rounded-full">
                     <svg
