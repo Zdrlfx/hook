@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
@@ -28,7 +28,7 @@ const Sidebar = () => {
               isMobileSidebarOpen ? "block" : "hidden"
             } lg:block`}
           >
-            Courseue
+            Eventure
           </h1>
           {/* Arrow button to close sidebar on small screens */}
           {isMobileSidebarOpen && (
@@ -102,6 +102,20 @@ const Sidebar = () => {
                     `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
                       isActive
                         ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
+                        : "text-gray-800 hover:bg-gray-100 hover:border-indigo-500"
+                    }`
+                  }
+                >
+              <span>🔖</span> <span>Book</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard/college-map"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 px-3 py-2 rounded-md transition duration-200 ${
+                      isActive
+                        ? "text-indigo-500 border-l-4 border-indigo-500 bg-gray-100"
                         : "text-gray-800 hover:bg-gray-100  hover:border-indigo-500"
                     }`
                   }
@@ -132,13 +146,15 @@ const Sidebar = () => {
               isMobileSidebarOpen ? "block" : "hidden"
             } lg:block`}
           >
-            <h3 className="text-sm font-semibold text-gray-500 mt-6 mb-2">
+            <span>⚙️</span><button className="text-blue-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
               Settings
-            </h3>
+            </button>
             <ul className="space-y-4">
-              <li className="text-red-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
+              <Link to="/login">
+              <span>⭕</span><button className="text-red-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
                 Logout
-              </li>
+              </button>
+              </Link>
             </ul>
           </div>
         </div>
