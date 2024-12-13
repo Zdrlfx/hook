@@ -19,6 +19,12 @@ export default function Login({ setUser }) {
       password: "123",
     },
     {
+      firstName: "Sweta",
+      lastName: "Suwal",
+      email: "swetasuwal.khce@gmail.com",
+      password: "123",
+    },
+    {
       firstName: "Jane",
       lastName: "Smith",
       email: "user2@example.com",
