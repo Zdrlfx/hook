@@ -35,7 +35,8 @@ const Layout = () => {
                 element={<GeneralBookingForm setFormData={setFormData} />} // Pass setFormData to update state
               />
               <Route path="events" element={<Events />} />
-              <Route path="college-map" element={<CollegeMap />} /> {/* New Route */}
+              <Route path="college-map" element={<CollegeMap />} />{" "}
+              {/* New Route */}
             </Routes>
           </div>
           <div className="w-1/4 hidden lg:block">

@@ -24,12 +24,13 @@ export default function Hero() {
       {/* Fixed Header */}
       <header
         className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
-          scrolled
-            ? "bg-white/70 backdrop-blur-md shadow-md"
-            : "bg-transparent"
+          scrolled ? "bg-white/70 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
       >
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+        <nav
+          aria-label="Global"
+          className="flex items-center justify-between p-6 lg:px-8"
+        >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -66,27 +67,24 @@ export default function Hero() {
         <div className="text-center w-3/5">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            Introducing seamless event hall bookings.{" "}
-             
+              Introducing seamless event hall bookings.{" "}
             </div>
           </div>
           <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-          Book your event venue with ease and convenience.
+            Book your event venue with ease and convenience.
           </h1>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-          Search, compare, and book the best halls for conferences, celebrations, and workshops.
+            Search, compare, and book the best halls for conferences,
+            celebrations, and workshops.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6 h-14">
-           
-          <Link
-  to="/login"
-  className="h-full relative w-40 inline-block px-8 py-4 text-base font-semibold text-white transition-transform transform bg-gradient-to-r from-indigo-600 to-[#fa4b6e] rounded-full shadow-lg hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center"
->
-  <span className="absolute inset-0 flex items-center justify-center transition-opacity opacity-0 bg-white/10 rounded-lg hover:opacity-100"></span>
-  Log in
-</Link>
-
-
+            <Link
+              to="/login"
+              className="h-full relative w-40 inline-block px-8 py-4 text-base font-semibold text-white transition-transform transform bg-gradient-to-r from-indigo-600 to-[#fa4b6e] rounded-full shadow-lg hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center"
+            >
+              <span className="absolute inset-0 flex items-center justify-center transition-opacity opacity-0 bg-white/10 rounded-lg hover:opacity-100"></span>
+              Log in
+            </Link>
           </div>
         </div>
       </div>

@@ -42,7 +42,6 @@ export default function Login({ setUser }) {
     );
 
     if (user) {
-      
       setUser({
         firstName: user.firstName,
         lastName: user.lastName,

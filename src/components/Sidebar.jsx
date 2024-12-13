@@ -106,7 +106,7 @@ const Sidebar = () => {
                     }`
                   }
                 >
-              <span>🔖</span> <span>Book</span>
+                  <span>🔖</span> <span>Book</span>
                 </NavLink>
               </li>
               <li>
@@ -146,14 +146,16 @@ const Sidebar = () => {
               isMobileSidebarOpen ? "block" : "hidden"
             } lg:block`}
           >
-            <span>⚙️</span><button className="text-blue-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
+            <span>⚙️</span>
+            <button className="text-blue-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
               Settings
             </button>
             <ul className="space-y-4">
               <Link to="/login">
-              <span>⭕</span><button className="text-red-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
-                Logout
-              </button>
+                <span>⭕</span>
+                <button className="text-red-500 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md transition duration-200">
+                  Logout
+                </button>
               </Link>
             </ul>
           </div>

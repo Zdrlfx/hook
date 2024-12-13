@@ -17,7 +17,9 @@ const RightSidebar = () => {
   // Check if a day has events
   const getTileClassName = ({ date, view }) => {
     if (view === "month") {
-      const eventDates = events.map((event) => new Date(event.date).toDateString());
+      const eventDates = events.map((event) =>
+        new Date(event.date).toDateString()
+      );
       if (eventDates.includes(date.toDateString())) {
         return "highlight";
       }
@@ -27,7 +29,9 @@ const RightSidebar = () => {
 
   // Handle click on a day
   const handleDayClick = (value) => {
-    const event = events.find((e) => new Date(e.date).toDateString() === value.toDateString());
+    const event = events.find(
+      (e) => new Date(e.date).toDateString() === value.toDateString()
+    );
     if (event) {
       navigate(`/events/${event.id}`); // Redirect to event details page
     }

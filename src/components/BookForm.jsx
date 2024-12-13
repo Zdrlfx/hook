@@ -49,7 +49,10 @@ const GeneralBookingForm = ({ setFormData }) => {
           {/* Input fields */}
           {/* Example input */}
           <div>
-            <label htmlFor="eventName" className="block text-gray-700 font-medium">
+            <label
+              htmlFor="eventName"
+              className="block text-gray-700 font-medium"
+            >
               Event Name
             </label>
             <input

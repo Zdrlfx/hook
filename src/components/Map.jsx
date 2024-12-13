@@ -46,7 +46,10 @@ const GeneralBookingForm = ({ setFormData }) => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="eventName" className="block text-gray-700 font-medium">
+              <label
+                htmlFor="eventName"
+                className="block text-gray-700 font-medium"
+              >
                 Event Name
               </label>
               <input
@@ -61,7 +64,10 @@ const GeneralBookingForm = ({ setFormData }) => {
               />
             </div>
             <div>
-              <label htmlFor="phone" className="block text-gray-700 font-medium">
+              <label
+                htmlFor="phone"
+                className="block text-gray-700 font-medium"
+              >
                 Phone Number
               </label>
               <input
@@ -78,7 +84,10 @@ const GeneralBookingForm = ({ setFormData }) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="eventDate" className="block text-gray-700 font-medium">
+              <label
+                htmlFor="eventDate"
+                className="block text-gray-700 font-medium"
+              >
                 Event Date
               </label>
               <input
@@ -93,40 +102,47 @@ const GeneralBookingForm = ({ setFormData }) => {
             </div>
             <div className="flex  space-x-3">
               <div className="w-full">
-              <label htmlFor="startTime" className="block text-gray-700 font-medium">
-                Start Time
-              </label>
-              <input
-                type="time"
-                id="startTime"
-                name="startTime"
-                value={localFormData.startTime}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md"
-                required
-              />
+                <label
+                  htmlFor="startTime"
+                  className="block text-gray-700 font-medium"
+                >
+                  Start Time
+                </label>
+                <input
+                  type="time"
+                  id="startTime"
+                  name="startTime"
+                  value={localFormData.startTime}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md"
+                  required
+                />
               </div>
               <div className="w-full">
-              <label htmlFor="endTime" className="block text-gray-700 font-medium">
-                End Time
-              </label>
-              <input
-                type="time"
-                id="endTime"
-                name="endTime"
-                value={localFormData.endTime}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md"
-                required
-              />
+                <label
+                  htmlFor="endTime"
+                  className="block text-gray-700 font-medium"
+                >
+                  End Time
+                </label>
+                <input
+                  type="time"
+                  id="endTime"
+                  name="endTime"
+                  value={localFormData.endTime}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md"
+                  required
+                />
+              </div>
             </div>
-
-            </div>
-
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="attendees" className="block text-gray-700 font-medium">
+              <label
+                htmlFor="attendees"
+                className="block text-gray-700 font-medium"
+              >
                 Expected Number of Attendees
               </label>
               <input
@@ -164,7 +180,10 @@ const GeneralBookingForm = ({ setFormData }) => {
             </div>
           </div>
           <div>
-            <label htmlFor="additionalInfo" className="block text-gray-700 font-medium">
+            <label
+              htmlFor="additionalInfo"
+              className="block text-gray-700 font-medium"
+            >
               Event Details
             </label>
             <textarea

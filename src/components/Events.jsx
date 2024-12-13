@@ -4,7 +4,8 @@ export const events = [
   {
     id: 1,
     title: "Psychological First Aid",
-    description: "Learn to provide psychological first aid to people in an emergency.",
+    description:
+      "Learn to provide psychological first aid to people in an emergency.",
     hall: "Hall 1",
     date: "2024-12-14",
     time: "03:00 PM",
@@ -12,7 +13,8 @@ export const events = [
   {
     id: 2,
     title: "Graphic Design",
-    description: "The goal of this specialization is to equip learners with a set of design skills.",
+    description:
+      "The goal of this specialization is to equip learners with a set of design skills.",
     hall: "Hall 2",
     date: "2024-12-14",
     time: "11:00 AM",
@@ -20,7 +22,8 @@ export const events = [
   {
     id: 3,
     title: "Hult Prize: Perfect Pitch Workshop",
-    description: "The goal of this workshop is to equip learners with a set of Presentation skills.",
+    description:
+      "The goal of this workshop is to equip learners with a set of Presentation skills.",
     hall: "Hall 1",
     date: "2024-12-15",
     time: "1:00 PM",
@@ -36,7 +39,9 @@ const EventCard = () => {
           // Extract date parts
           const date = new Date(event.date);
           const day = date.getDate();
-          const month = date.toLocaleString("default", { month: "long" }).toUpperCase();
+          const month = date
+            .toLocaleString("default", { month: "long" })
+            .toUpperCase();
 
           return (
             <div
@@ -53,8 +58,12 @@ const EventCard = () => {
 
               {/* Event Details */}
               <div className="flex-1 px-4 py-4 sm:py-6">
-                <h2 className="text-lg font-bold text-gray-900">{event.title}</h2>
-                <p className="text-sm text-gray-600 mt-1 line-clamp-2">{event.description}</p>
+                <h2 className="text-lg font-bold text-gray-900">
+                  {event.title}
+                </h2>
+                <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                  {event.description}
+                </p>
                 <p className="text-sm text-gray-500 mt-1">
                   📍 <span>{event.hall}</span>
                 </p>

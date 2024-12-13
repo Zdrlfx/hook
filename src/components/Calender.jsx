@@ -72,30 +72,33 @@ const RightSidebar = () => {
         </LocalizationProvider>
       </div>
 
-  {/* Event List Section */}
-<h2 className="text-md font-semibold mb-2">
-  Events on {selectedDate.format("YYYY-MM-DD")}
-</h2>
-<div className="space-y-2">
-  {eventsForDate.length > 0 ? (
-    eventsForDate.map((event) => (
-      <div
-        key={event.id}
-        className="flex items-center p-4 bg-white shadow-md rounded-lg border border-gray-200 "
-      >
-        {/* Event Information */}
-        <div className="ml-4">
-          <h3 className="text-sm font-bold">{event.title}</h3>
-          <p className="text-xs text-gray-500">⏰<span>{event.time}</span></p>
-          <p className="text-xs text-gray-500">📍<span>{event.hall}</span></p>
-        </div>
-        
+      {/* Event List Section */}
+      <h2 className="text-md font-semibold mb-2">
+        Events on {selectedDate.format("YYYY-MM-DD")}
+      </h2>
+      <div className="space-y-2">
+        {eventsForDate.length > 0 ? (
+          eventsForDate.map((event) => (
+            <div
+              key={event.id}
+              className="flex items-center p-4 bg-white shadow-md rounded-lg border border-gray-200 "
+            >
+              {/* Event Information */}
+              <div className="ml-4">
+                <h3 className="text-sm font-bold">{event.title}</h3>
+                <p className="text-xs text-gray-500">
+                  ⏰<span>{event.time}</span>
+                </p>
+                <p className="text-xs text-gray-500">
+                  📍<span>{event.hall}</span>
+                </p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-gray-500">No events for this date.</p>
+        )}
       </div>
-    ))
-  ) : (
-    <p className="text-sm text-gray-500">No events for this date.</p>
-  )}
-</div>
     </div>
   );
 };

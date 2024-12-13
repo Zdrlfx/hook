@@ -14,12 +14,12 @@ const Navbar = () => {
         </IconButton>
         <Avatar alt="monkey" src="/avatar.png" />
         <div className="flex flex-col items-start">
-        <p className="text-base font-medium flex  items-center">Sweta Suwal</p>
-        <div className="flex flex-start space-x-1 items-baseline">
-          <div className="w-2 h-2 bg-[#ff6584] rounded-full"></div>
-        <p className="text-xs text-gray-500 font-semibold">
-        
-          Student</p>
+          <p className="text-base font-medium flex  items-center">
+            Sweta Suwal
+          </p>
+          <div className="flex flex-start space-x-1 items-baseline">
+            <div className="w-2 h-2 bg-[#ff6584] rounded-full"></div>
+            <p className="text-xs text-gray-500 font-semibold">Student</p>
           </div>
         </div>
       </div>
