@@ -37,9 +37,9 @@ const RightSidebar = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-full px-4 py-6">
+    <div className="flex flex-col w-full h-full px-4">
       {/* Calendar Section */}
-      <h1 className="text-lg font-semibold mb-4">Calendar</h1>
+      <h1 className="text-lg font-semibold ">Calendar</h1>
       <div className="flex items-center justify-center mb-4">
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <StaticDatePicker

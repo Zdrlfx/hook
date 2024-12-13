@@ -91,7 +91,8 @@ const GeneralBookingForm = ({ setFormData }) => {
                 required
               />
             </div>
-            <div>
+            <div className="flex  space-x-3">
+              <div className="w-full">
               <label htmlFor="startTime" className="block text-gray-700 font-medium">
                 Start Time
               </label>
@@ -104,8 +105,8 @@ const GeneralBookingForm = ({ setFormData }) => {
                 className="w-full mt-1 p-2 border rounded-md"
                 required
               />
-            </div>
-            <div>
+              </div>
+              <div className="w-full">
               <label htmlFor="endTime" className="block text-gray-700 font-medium">
                 End Time
               </label>
@@ -119,6 +120,9 @@ const GeneralBookingForm = ({ setFormData }) => {
                 required
               />
             </div>
+
+            </div>
+
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
